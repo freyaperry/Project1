@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+        .box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Welcome to Freya's webpage</h1>
+        <p>ready? <strong>strap in</strong>!!!</p>
+        <p>Enter your weight in kg to find out how much you'd weigh on other planets </p>
+
+        <form action="/planets" method="GET" onsubmit="return validate()">
+            <input
+                type="number"
+                id="wight"
+                name="weight"
+                placeholder="Your weight (kg)"
+                min="0.1"
+                step="0.1"
+                required
+                />
+            <p class="error" id="error-msg" style="display:none;">Please enter a valid weight!</p>
+            <button type="submit">Choose a planet ➜</button>
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            const val = document.getElementById('weight').value;
+            if (!val || parseFloat(val) <= 0) {
+                document.getElementById('error-msg').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+    </script>
+            <!--error?-->
+            <button type="submit">Choose a planet </button>
+        </form>
+    </div>
+</body>
+</html>

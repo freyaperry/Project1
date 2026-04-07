@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Weight on {{ planet }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 { color: #333; }
+        .box {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .result {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+        .links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        a {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        a:hover { background-color: #45a049; }
+        a.secondary {
+            background-color: #aaa;
+        }
+        a.secondary:hover { background-color: #888; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>You on {{ planet }}! </h1>
+        <p class="subtitle">On Earth you weigh <strong>{{ weight }} kg</strong>. On {{ planet }}...</p>
+        <div class="result">{{ planet_weight }} kg</div>
+
+        <div class="links">
+            <a href="/planets?weight={{ weight }}">← Try another planet</a>
+            <a class="secondary" href="/">Start over</a>
+        </div>
+    </div>
+</body>
+</html>
