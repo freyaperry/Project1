@@ -1,2 +1,1 @@
-# Project1
-print("hello world")
+Solar system weight calculator
